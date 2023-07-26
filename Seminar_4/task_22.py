@@ -17,7 +17,7 @@ for i in range(maxLen):
 set1 = set(list1)
 set2 = set(list2)
 setIntersection = set1.intersection(set2)
-sortedListIntersection = list(setIntersection)
+sortedListIntersection = list(setIntersection) # списки с числами сортируются по возрастанию
 
 print(f"Сгенерирован первый список чисел: \n{list1}")
 print(f"Сгенерирован Второй список чисел: \n{list2}")
