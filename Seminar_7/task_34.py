@@ -4,13 +4,22 @@
 # Фраза может состоять из одного слова, если во фразе несколько слов, то они разделяются дефисами. Фразы отделяются друг от друга пробелами.
 # Стихотворение  Винни-Пух вбивает в программу с клавиатуры. В ответе напишите “Парам пам-пам”, если с ритмом все в порядке и “Пам парам”, если с ритмом все не в порядке
 
+def CountVowels(funcCount, listPhrases):
+    return len(set(map(funcCount, listPhrases))) < 2
+
 listPhrases = input("Введите стихотворение Винни-Пуха: ").split()
-answer = "Парам пам-пам"
-vowel = listPhrases[0].count("а")
+if CountVowels(lambda x: x.count("а"),listPhrases):
+    print("Парам пам-пам")
+else:
+    print("Пам парам")
 
-for i in range(1,len(listPhrases)):
-    if vowel != listPhrases[i].count("а"):
-        answer = "Пам парам"
-        i = len(listPhrases)
+# второй вариант без функций
+# answer = "Парам пам-пам"
+# vowel = listPhrases[0].count("а")
 
-print(answer)
+# for i in range(1,len(listPhrases)):
+#     if vowel != listPhrases[i].count("а"):
+#         answer = "Пам парам"
+#         i = len(listPhrases)
+
+# print(answer)
